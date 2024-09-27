@@ -1,0 +1,43 @@
+Application de tirage au sort d'apprenants pour l'oral
+Un enseignant souhaite disposer d'une application individuelle qui va lui permettre de tirer au sort l'élève qu'il vaut interroger à l'oral pendant ses cours. Il veut que ce tirage au sort soit «juste» :
+    • un élève qui vient d'être interrogé ne devrait pas être tiré au sort une nouvelle fois avant un certain temps ;
+    • un élève qui n'a pas été interrogé depuis longtemps devrait avoir plus de chances d'être choisi lors du prochain tirage ; etc ;
+On peut donc définir plusieurs «rôles» :
+    • l'apprenants qui fait partie d'une classe ; 
+    • le formateur dispense un cours dans une classe ; 
+    • le gestionnaire de l'application qui va gérer les cours, les classes, les apprenants, les formateurs en début d'année. 
+
+Contexte du projet
+
+L'application de tirage au sort équitable pour l'oral vise à faciliter l'interrogation des élèves en classe tout en assurant une répartition juste des interventions. Elle s'adresse principalement aux enseignants qui souhaitent dynamiser leurs cours et impliquer tous les élèves de manière équitable.
+
+Environnement de développement
+Pour ce projet, j’opterai pour un développement web avec : 
+
+    • Frontend : HTML, CSS...
+    • Backend : PHP
+    • Base de données : MySQL
+
+
+Fonctionnalités de l'application
+Pour le gestionnaire:
+    • Créer/modifier/supprimer des classes, cours, apprenants et formateurs 
+    • Attribuer des formateurs aux cours 
+    • Importer des listes d'élèves depuis des fichiers CSV 
+    • Gérer les droits d'accès 
+Pour le formateur:
+    • Se connecter à son compte 
+    • Sélectionner une classe et un cours 
+    • Lancer un tirage au sort équitable 
+    • Marquer un élève comme interrogé 
+    • Visualiser l'historique des interrogations 
+    • Consulter des statistiques sur la participation orale 
+    • Ajouter des notes ou commentaires sur les performances orales 
+Pour l'apprenant:
+    • Se connecter à son compte 
+    • Visualiser son historique d'interrogations 
+    • Consulter ses statistiques personnelles de participation 
+Fonctionnalités du tirage au sort:
+    • Pondération basée sur la fréquence et la date des dernières interrogations 
+    • Exclusion temporaire des élèves récemment interrogés 
+    • Prise en compte des absences 
