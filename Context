@@ -32,6 +32,6 @@ Un enseignant souhaite une application qui lui permette de tirer au sort un appr
 
 Langage de programmation : PHP (Laravel est un framework PHP robuste)
 Framework de développement : Laravel (PHP)
-Base de données : MySQL ou PostgreSQL
+Base de données : MySQL 
 Front-end : HTML5, CSS3, JavaScript
       
