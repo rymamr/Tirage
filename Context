@@ -1,4 +1,5 @@
 Application de tirage au sort d'apprenants pour l'oral
+
 Un enseignant souhaite disposer d'une application individuelle qui va lui permettre de tirer au sort l'élève qu'il vaut interroger à l'oral pendant ses cours. Il veut que ce tirage au sort soit «juste» :
     • un élève qui vient d'être interrogé ne devrait pas être tiré au sort une nouvelle fois avant un certain temps ;
     • un élève qui n'a pas été interrogé depuis longtemps devrait avoir plus de chances d'être choisi lors du prochain tirage ; etc ;
@@ -7,36 +8,30 @@ On peut donc définir plusieurs «rôles» :
     • le formateur dispense un cours dans une classe ; 
     • le gestionnaire de l'application qui va gérer les cours, les classes, les apprenants, les formateurs en début d'année. 
 
-Contexte du projet
+Contexte de l'application :
+Un enseignant souhaite une application qui lui permette de tirer au sort un apprenant à interroger à l’oral de manière équitable pendant ses cours. L'application devra tenir compte de plusieurs critères pour assurer la justice du tirage au sort :
+    1. Équité dans le tirage :
+        ◦ Un apprenant récemment interrogé ne doit pas être sélectionné trop rapidement.
+        ◦ Les apprenants qui n’ont pas été interrogés depuis longtemps doivent avoir plus de chances d’être tirés au sort.
+        ◦ L'application devra gérer un historique des interrogations pour équilibrer les chances des apprenants.
+    2. Rôles et gestion des utilisateurs :
+        ◦ Gestionnaire de l'application : Cette personne configure l'application en début d’année scolaire. Elle gère l’inscription des apprenants, des formateurs, ainsi que l'organisation des cours et des classes.
+        ◦ Formateurs : Ils interviennent dans différentes classes et assurent la dispense des cours. Ils utilisent l'application pour tirer au sort un apprenant lors des sessions d’oral.
+        ◦ Apprenants : Ils sont inscrits dans des classes et peuvent être interrogés lors des cours.
+    3. Structure des données :
+        ◦ Chaque utilisateur a des informations comme le nom, le prénom, l'email, un identifiant de connexion et un mot de passe. Un utilisateur peut avoir un ou plusieurs rôles, tels que gestionnaire, formateur ou apprenant.
+        ◦ Les classes regroupent des apprenants, et chaque apprenant appartient à une classe. Un formateur peut dispenser des cours dans une ou plusieurs classes.
+        ◦ Un cours est lié à une classe et à un formateur, et chaque cours se déroule à une date et une heure spécifiques.
+        ◦ Les interrogations sont enregistrées dans l'application, incluant la date, l’heure, la durée de l'interrogation et des commentaires éventuels. Chaque interrogation concerne un apprenant spécifique.
+    4. Fonctionnement de l'application :
+        ◦ Lorsqu'un formateur souhaite interroger un apprenant, il sélectionne le cours en cours et la classe correspondante dans l'application.
+        ◦ L’application prend en compte le temps écoulé depuis la dernière interrogation de chaque apprenant pour ajuster les chances de tirage au sort. Les apprenants non interrogés depuis longtemps auront une probabilité plus élevée d’être sélectionnés.
+        ◦ Une fois l'apprenant sélectionné et interrogé, l’interrogation est enregistrée dans le système avec des détails sur le déroulement, et cet apprenant ne pourra plus être sélectionné pendant une certaine période.
+          
+2. Choisir l'environnement de développement (avec Laravel)
 
-L'application de tirage au sort équitable pour l'oral vise à faciliter l'interrogation des élèves en classe tout en assurant une répartition juste des interventions. Elle s'adresse principalement aux enseignants qui souhaitent dynamiser leurs cours et impliquer tous les élèves de manière équitable.
-
-Environnement de développement
-Pour ce projet, j’opterai pour un développement web avec : 
-
-    • Frontend : HTML, CSS...
-    • Backend : PHP
-    • Base de données : MySQL
-
-
-Fonctionnalités de l'application
-Pour le gestionnaire:
-    • Créer/modifier/supprimer des classes, cours, apprenants et formateurs 
-    • Attribuer des formateurs aux cours 
-    • Importer des listes d'élèves depuis des fichiers CSV 
-    • Gérer les droits d'accès 
-Pour le formateur:
-    • Se connecter à son compte 
-    • Sélectionner une classe et un cours 
-    • Lancer un tirage au sort équitable 
-    • Marquer un élève comme interrogé 
-    • Visualiser l'historique des interrogations 
-    • Consulter des statistiques sur la participation orale 
-    • Ajouter des notes ou commentaires sur les performances orales 
-Pour l'apprenant:
-    • Se connecter à son compte 
-    • Visualiser son historique d'interrogations 
-    • Consulter ses statistiques personnelles de participation 
-Fonctionnalités du tirage au sort:
-    • Pondération basée sur la fréquence et la date des dernières interrogations 
-    • Exclusion temporaire des élèves récemment interrogés 
+Langage de programmation : PHP (Laravel est un framework PHP robuste)
+Framework de développement : Laravel (PHP)
+Base de données : MySQL ou PostgreSQL
+Front-end : HTML5, CSS3, JavaScript
+      
